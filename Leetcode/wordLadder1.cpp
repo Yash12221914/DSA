@@ -1,9 +1,7 @@
+//  question link ---  https://leetcode.com/problems/word-ladder/
+
 #include<bits/stdc++.h>
-#include<iostream>
-#include<vector>
-#include<string>
-#include<queue>
-#include<unordered_set>
+using namespace std;
 
 class Ans{
     public:
