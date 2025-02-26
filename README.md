@@ -1,2 +1,2 @@
 # DSA
-I will continue solving this until my placement.
+I'll be putting whatever questions I do till placement
