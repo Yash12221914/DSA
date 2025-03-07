@@ -1,5 +1,4 @@
 //problem link -- https://www.naukri.com/code360/problems/complete-string_2687860?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_tries_videos&leftPanelTabValue=PROBLEM
-
 #include <bits/stdc++.h> 
 using namespace std;
 struct Node{
