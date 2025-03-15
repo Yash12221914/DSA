@@ -1,3 +1,5 @@
+//Problem link - https://www.geeksforgeeks.org/problems/sum-of-subarrays2229/1
+
 #include <bits/stdc++.h>
 using namespace std;
 #define loop(i,l,r)     for(int i=l; i<r; i++)
