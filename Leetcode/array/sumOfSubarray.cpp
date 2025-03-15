@@ -1,5 +1,9 @@
 //Problem link - https://www.geeksforgeeks.org/problems/sum-of-subarrays2229/1
 
+//Approach - Count the number of subarrays an element contains ,
+//The are two types of subarray - 1.Subarray starts with arr[i] and (n-i) numbers are present similarlly
+//2. subarray does not start with arr[i] and (n-i)*i numbers of subarrays are present so
+//Total will be - (n-i)*(n-i)*i => (n-i)(i+1) 
 #include <bits/stdc++.h>
 using namespace std;
 #define loop(i,l,r)     for(int i=l; i<r; i++)
