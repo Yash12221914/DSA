@@ -1,3 +1,5 @@
+// Problem link - https://www.naukri.com/code360/problems/fruits-and-baskets_985356?leftPanelTabValue=PROBLEM
+
 #include <bits/stdc++.h>
 using namespace std;
 #define loop(i,l,r)     for(int i=l; i<r; i++)
