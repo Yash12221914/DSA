@@ -1,3 +1,5 @@
+//Problem link - https://leetcode.com/problems/longest-repeating-character-replacement/
+
 #include <bits/stdc++.h>
 using namespace std;
 #define loop(i,l,r)     for(int i=l; i<r; i++)
