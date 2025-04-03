@@ -1,3 +1,4 @@
+// Problen link - https://codeforces.com/problemset/problem/2031/B
 #include <bits/stdc++.h>
 using namespace std;
 #define loop(i,l,r)     for(int i=l; i<r; i++)
