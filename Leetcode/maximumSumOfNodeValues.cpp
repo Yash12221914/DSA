@@ -42,7 +42,7 @@ void solve(){
         }
         return sum;
 }
-  
+  //hiii
   
 int32_t main(){
 int t;
