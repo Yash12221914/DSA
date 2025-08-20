@@ -25,45 +25,56 @@ const int mod= 1e9+7;
 const int inf= 1e15;
  
  
-void solve(){
-    int n,m,k;
-    cin>>n>>m>>k;
-    vvi times(n,vi(m));
-    loop(i,0,n){
-        loop(j,0,m){
-            cin>>times[i][j];
-        }
+void solve() {
+    int n, m, k;
+    cin >> n >> m >> k;
+    
+    vector<vector<int>> times(m, vector<int>(3));
+    for (int i = 0; i < m; i++) {
+        cin >> times[i][0] >> times[i][1] >> times[i][2];
     }
-     vector<pair<int,int>> adj[n+1];
-        for (auto &time : times) {
-            int u = time[0];
-            int v = time[1];
-            int d = time[2];
-            adj[u].push_back({v, d});
-        }
-        vector<int> dist(n+1, 1e9);
-        dist[k] = 0;
-        queue<pair<int,int>> q;
-        q.push({0, k});
-        while (!q.empty()) {
-            auto [cost, node] = q.front();
-            q.pop();
-            for (auto &[nextNode, weight] : adj[node]) {
-                if (cost + weight < dist[nextNode]) {
-                    dist[nextNode] = cost + weight;
-                    q.push({dist[nextNode], nextNode});
-                }
+    
+    vector<vector<pair<int,int>>> adj(n+1);
+    for (auto &time : times) {
+        int u = time[0], v = time[1], d = time[2];
+        adj[u].push_back({v, d});
+    }
+    
+    vector<int> dist(n+1, inf);
+    dist[k] = 0;
+    
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+    pq.push({0, k});
+    
+    while (!pq.empty()) {
+        auto top = pq.top(); pq.pop();
+        int cost = top.first;
+        int node = top.second;
+        
+        if (cost > dist[node]) continue;
+        
+        for (auto &edge : adj[node]) {
+            int nextNode = edge.first;
+            int weight   = edge.second;
+            
+            if (cost + weight < dist[nextNode]) {
+                dist[nextNode] = cost + weight;
+                pq.push({dist[nextNode], nextNode});
             }
         }
-        int maxTime = 0;
-        for (int i = 1; i <= n; i++) {
-            if (dist[i] == 1e9) return -1;
-            maxTime = max(maxTime, dist[i]);
+    }
+    
+    int maxTime = 0;
+    for (int i = 1; i <= n; i++) {
+        if (dist[i] == inf) {
+            cout << -1 << endl;
+            return;
         }
-        
-        cout<<maxTime<<endl;
+        maxTime = max(maxTime, dist[i]);
+    }
+    
+    cout << maxTime << endl;
 }
-  
   
 int32_t main(){
 int t;
